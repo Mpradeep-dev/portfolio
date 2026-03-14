@@ -2,13 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-blue: #93c5fd;
-  --color-neon-purple: #c4b5fd;
-  --color-neon-pink: #f9a8d4;
+  --color-pure-white: #ffffff;
+  --color-silver-gray: #e5e7eb;
+  --color-charcoal: #374151;
   --color-glass-bg: rgba(255, 255, 255, 0.04);
   --color-glass-border: rgba(255, 255, 255, 0.08);
   --color-glass-highlight: rgba(255, 255, 255, 0.12);
-  --color-cursor-glow: rgba(147, 197, 253, 0.04);
+  --color-cursor-glow: rgba(255, 255, 255, 0.04);
   --color-dark-bg: #050505;
 }
 
@@ -25,7 +25,7 @@
     cursor: none;
     position: relative;
   }
-  
+
   /* Add a dark overlay to ensure text readability over the background image */
   body::before {
     content: '';
@@ -34,12 +34,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 5, 5, 0.7); /* dark overlay */
+    background: rgba(5, 5, 5, 0.7);
+    /* dark overlay */
     z-index: -1;
     pointer-events: none;
   }
 
-  a, button, [role="button"] {
+  a,
+  button,
+  [role="button"] {
     cursor: none;
   }
 }
@@ -76,7 +79,7 @@
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
+    box-shadow:
       inset 0 2px 4px rgba(255, 255, 255, 0.1),
       0 4px 12px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -85,23 +88,55 @@
 }
 
 @keyframes float-1 {
-  0%, 100% { transform: translate(0, 0); }
-  33%       { transform: translate(80px, -60px); }
-  66%       { transform: translate(-40px, 80px); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  33% {
+    transform: translate(80px, -60px);
+  }
+
+  66% {
+    transform: translate(-40px, 80px);
+  }
 }
 
 @keyframes float-2 {
-  0%, 100% { transform: translate(0, 0); }
-  50%       { transform: translate(-100px, 60px); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-100px, 60px);
+  }
 }
 
 @keyframes float-3 {
-  0%, 100% { transform: translate(0, 0); }
-  40%       { transform: translate(60px, 40px); }
-  80%       { transform: translate(-30px, -50px); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  40% {
+    transform: translate(60px, 40px);
+  }
+
+  80% {
+    transform: translate(-30px, -50px);
+  }
 }
 
 @keyframes spin-ring {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

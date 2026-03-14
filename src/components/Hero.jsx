@@ -39,7 +39,7 @@ const Hero = () => {
                   width: 168,
                   height: 168,
                   borderRadius: '50%',
-                  background: 'conic-gradient(from 0deg, rgba(147,197,253,0.6), rgba(196,181,253,0.4), rgba(147,197,253,0.6))',
+                  background: 'conic-gradient(from 0deg, rgba(255,255,255,0.6), rgba(200,200,200,0.4), rgba(255,255,255,0.6))',
                   animation: 'spin-ring 6s linear infinite',
                   position: 'absolute',
                   top: -4,

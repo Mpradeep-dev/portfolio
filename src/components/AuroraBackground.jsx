@@ -4,9 +4,9 @@ import { motion as Motion, useTransform } from 'framer-motion';
 import { useCursorSpot } from '../hooks/useCursorSpot';
 
 const ORB_CONFIG = [
-  { color: '#1d4ed8', size: 650, keyframe: 'float-1', duration: '18s', multiplier: 30, top: '10%', left: '15%' },
-  { color: '#5b21b6', size: 520, keyframe: 'float-2', duration: '22s', multiplier: 50, top: '50%', left: '60%' },
-  { color: '#9d174d', size: 420, keyframe: 'float-3', duration: '15s', multiplier: 20, top: '70%', left: '25%' },
+  { color: '#374151', size: 650, keyframe: 'float-1', duration: '18s', multiplier: 30, top: '10%', left: '15%' },
+  { color: '#1f2937', size: 520, keyframe: 'float-2', duration: '22s', multiplier: 50, top: '50%', left: '60%' },
+  { color: '#4b5563', size: 420, keyframe: 'float-3', duration: '15s', multiplier: 20, top: '70%', left: '25%' },
 ];
 
 function Orb({ config, cursorX, cursorY }) {

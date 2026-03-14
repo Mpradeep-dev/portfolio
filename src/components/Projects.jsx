@@ -4,14 +4,14 @@ import { Github, Star, ExternalLink, Code2 } from 'lucide-react';
 import GlassCard from './GlassCard';
 
 const LANG_COLORS = {
-  Python: '#3572A5',
-  Java: '#b07219',
-  JavaScript: '#f1e05a',
-  TypeScript: '#3178c6',
-  Dart: '#00B4AB',
-  'C++': '#f34b7d',
-  Go: '#00ADD8',
-  Rust: '#dea584',
+  Python: '#e5e7eb',
+  Java: '#9ca3af',
+  JavaScript: '#ffffff',
+  TypeScript: '#d1d5db',
+  Dart: '#6b7280',
+  'C++': '#f3f4f6',
+  Go: '#e5e7eb',
+  Rust: '#808080',
 };
 
 const CATEGORIES = ['All', 'AI / ML', 'Backend', 'Web development', 'Experiments'];
@@ -56,18 +56,17 @@ const Projects = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Featured Projects</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-neon-blue)] to-[var(--color-neon-purple)] mx-auto rounded-full box-glow mb-8" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow mb-8" />
 
           <div className="flex flex-wrap justify-center gap-3">
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 font-['DM_Sans'] ${
-                  filter === cat
-                    ? 'bg-gradient-to-r from-[var(--color-neon-blue)] to-[var(--color-neon-purple)] text-white shadow-[0_0_15px_rgba(0,243,255,0.4)]'
-                    : 'glass text-gray-300 hover:text-white hover:border-[var(--color-neon-blue)]'
-                }`}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 font-['DM_Sans'] ${filter === cat
+                    ? 'bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black shadow-[0_0_15px_rgba(255,255,255,0.4)]'
+                    : 'glass text-gray-300 hover:text-white hover:border-[var(--color-pure-white)]'
+                  }`}
               >
                 {cat}
               </button>
@@ -77,7 +76,7 @@ const Projects = () => {
 
         {loading ? (
           <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[var(--color-neon-blue)] shadow-[0_0_15px_rgba(0,243,255,0.4)]" />
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[var(--color-pure-white)] shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
           </div>
         ) : (
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -93,7 +92,7 @@ const Projects = () => {
                 >
                   <GlassCard className="h-full flex flex-col items-start">
                     <div className="flex justify-between items-start w-full mb-4">
-                      <div className="p-3 rounded-lg glass bg-[var(--color-neon-blue)]/10 text-[var(--color-neon-blue)]">
+                      <div className="p-3 rounded-lg glass bg-[var(--color-pure-white)]/10 text-[var(--color-pure-white)]">
                         <Code2 size={24} />
                       </div>
                       <div className="flex gap-3 items-center">
@@ -107,7 +106,7 @@ const Projects = () => {
                           <Github size={20} />
                         </a>
                         {repo.homepage && (
-                          <a href={repo.homepage} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[var(--color-neon-blue)] transition-colors">
+                          <a href={repo.homepage} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[var(--color-pure-white)] transition-colors">
                             <ExternalLink size={20} />
                           </a>
                         )}

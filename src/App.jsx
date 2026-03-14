@@ -12,7 +12,7 @@ import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
-    <div className="min-h-screen selection:bg-[var(--color-neon-purple)] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen selection:bg-[var(--color-silver-gray)] selection:text-black overflow-x-hidden">
       <CustomCursor />
       {/* z-0: aurora orb background */}
       <AuroraBackground />
@@ -21,7 +21,7 @@ function App() {
       <div
         className="pointer-events-none fixed inset-0 z-[1]"
         style={{
-          background: 'radial-gradient(600px circle at var(--cx, 50%) var(--cy, 50%), rgba(0,243,255,0.06), transparent 80%)'
+          background: 'radial-gradient(600px circle at var(--cx, 50%) var(--cy, 50%), rgba(255,255,255,0.06), transparent 80%)'
         }}
       />
 
@@ -38,7 +38,7 @@ function App() {
 
       <footer className="relative z-10 py-8 text-center text-gray-500 border-t border-[var(--color-glass-border)] glass rounded-t-3xl mt-12 w-full backdrop-blur-xl">
         <p>© {new Date().getFullYear()} Pradeep M. All rights reserved.</p>
-        <p className="text-sm mt-2 font-['DM_Sans']">Designed with <span className="text-[var(--color-neon-blue)]">Glassmorphism</span> & Neon</p>
+        <p className="text-sm mt-2 font-['DM_Sans']">Designed with <span className="text-[var(--color-pure-white)]">Glassmorphism</span> & Monochrome</p>
       </footer>
     </div>
   );

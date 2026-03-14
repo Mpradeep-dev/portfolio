@@ -18,7 +18,7 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Experience Timeline</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-neon-blue)] to-[var(--color-neon-purple)] mx-auto rounded-full box-glow" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow" />
         </motion.div>
 
         {/* Timeline */}
@@ -26,7 +26,7 @@ const Experience = () => {
           {/* Vertical neon line */}
           <div
             className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5"
-            style={{ background: 'linear-gradient(to bottom, #00f3ff, #9d00ff)' }}
+            style={{ background: 'linear-gradient(to bottom, #ffffff, #c0c0c0)' }}
           />
 
           {experience.map((exp, idx) => (
@@ -37,19 +37,19 @@ const Experience = () => {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.15 }}
-                className="absolute left-[10px] md:left-[26px] top-6 w-3 h-3 rounded-full bg-[var(--color-neon-blue)] shadow-[0_0_8px_rgba(0,243,255,0.8)]"
+                className="absolute left-[10px] md:left-[26px] top-6 w-3 h-3 rounded-full bg-[var(--color-pure-white)] shadow-[0_0_8px_rgba(255,255,255,0.8)]"
               />
 
               <GlassCard
                 delay={idx * 0.15}
-                className="border-l-2 border-l-transparent hover:border-l-[var(--color-neon-blue)] transition-colors duration-300"
+                className="border-l-2 border-l-transparent hover:border-l-[var(--color-pure-white)] transition-colors duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                   <h3 className="text-2xl font-bold text-white flex items-center gap-2 font-['Syne']">
-                    <Briefcase size={20} className="text-[var(--color-neon-blue)]" />
+                    <Briefcase size={20} className="text-[var(--color-pure-white)]" />
                     {exp.role}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-[var(--color-neon-purple)] font-medium bg-[var(--color-neon-purple)]/10 px-3 py-1 rounded-full w-fit">
+                  <div className="flex items-center gap-2 text-sm text-[var(--color-pure-white)] font-medium bg-[var(--color-pure-white)]/10 px-3 py-1 rounded-full w-fit">
                     <Calendar size={14} />
                     {exp.duration}
                   </div>
@@ -60,7 +60,7 @@ const Experience = () => {
                 <ul className="space-y-3 mb-6">
                   {exp.responsibilities.map((resp, i) => (
                     <li key={i} className="text-gray-400 text-base leading-relaxed flex items-start gap-2 font-['DM_Sans']">
-                      <ChevronRight size={16} className="text-[var(--color-neon-blue)] mt-1 flex-shrink-0" />
+                      <ChevronRight size={16} className="text-[var(--color-pure-white)] mt-1 flex-shrink-0" />
                       <span>{resp}</span>
                     </li>
                   ))}
@@ -71,7 +71,7 @@ const Experience = () => {
                     {exp.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="text-xs font-medium px-3 py-1 rounded-full border border-[var(--color-neon-blue)]/30 text-[var(--color-neon-blue)] bg-[var(--color-neon-blue)]/5 font-['DM_Sans']"
+                        className="text-xs font-medium px-3 py-1 rounded-full border border-[var(--color-pure-white)]/30 text-[var(--color-pure-white)] bg-[var(--color-pure-white)]/5 font-['DM_Sans']"
                       >
                         {tech}
                       </span>

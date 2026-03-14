@@ -5,19 +5,19 @@ import { portfolioData } from '../data/portfolio_data';
 import { Cpu, Bitcoin, Bot, BookOpen, Monitor, MemoryStick, Layers, Gamepad2, ChevronRight, ChevronLeft } from 'lucide-react';
 
 const HOBBY_ICONS = {
-  Gamepad2: <Gamepad2 size={32} className="text-[#ff00aa]" />,
-  Bitcoin: <Bitcoin size={32} className="text-[#f7931a]" />,
-  Cpu: <Cpu size={32} className="text-[#9d00ff]" />,
-  Bot: <Bot size={32} className="text-[#00ff9d]" />,
-  BookOpen: <BookOpen size={32} className="text-[#00f3ff]" />,
+  Gamepad2: <Gamepad2 size={32} className="text-white" />,
+  Bitcoin: <Bitcoin size={32} className="text-gray-300" />,
+  Cpu: <Cpu size={32} className="text-gray-400" />,
+  Bot: <Bot size={32} className="text-gray-200" />,
+  BookOpen: <BookOpen size={32} className="text-white" />,
 };
 
 const BORDER_COLORS = {
-  Gamepad2: 'border-t-[#ff00aa]',
-  Bitcoin: 'border-t-[#f7931a]',
-  Cpu: 'border-t-[#9d00ff]',
-  Bot: 'border-t-[#00ff9d]',
-  BookOpen: 'border-t-[#00f3ff]',
+  Gamepad2: 'border-t-white',
+  Bitcoin: 'border-t-gray-300',
+  Cpu: 'border-t-gray-400',
+  Bot: 'border-t-gray-200',
+  BookOpen: 'border-t-white',
 };
 
 const Hobbies = () => {
@@ -34,7 +34,7 @@ const Hobbies = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Off the Keyboard</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-neon-blue)] to-[var(--color-neon-purple)] mx-auto rounded-full box-glow" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow" />
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
@@ -52,7 +52,7 @@ const Hobbies = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveSlide(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeSlide === idx ? 'bg-[var(--color-neon-blue)] w-8 shadow-[0_0_10px_var(--color-neon-blue)]' : 'bg-white/20 hover:bg-white/40'
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeSlide === idx ? 'bg-[var(--color-pure-white)] w-8 shadow-[0_0_10px_var(--color-pure-white)]' : 'bg-white/20 hover:bg-white/40'
                     }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -101,7 +101,7 @@ const Hobbies = () => {
                         <ul className="space-y-3">
                           {hobbies[activeSlide].activities.map((act, i) => (
                             <li key={i} className="flex flex-start gap-3 text-gray-300 text-base font-['DM_Sans'] group">
-                              <ChevronRight size={18} className="shrink-0 mt-1 text-[var(--color-neon-blue)] opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                              <ChevronRight size={18} className="shrink-0 mt-1 text-[var(--color-pure-white)] opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                               <span className="group-hover:text-white transition-colors">{act}</span>
                             </li>
                           ))}
@@ -122,8 +122,8 @@ const Hobbies = () => {
                               { x: 90, bodyY: 10, bodyH: 22, wickY1: 4, wickY2: 40, bull: true },
                             ].map((c, i) => (
                               <g key={i}>
-                                <line x1={c.x + 6} y1={c.wickY1} x2={c.x + 6} y2={c.wickY2} stroke={c.bull ? '#00f3ff80' : '#ff00aa80'} strokeWidth="1.5" />
-                                <rect x={c.x} y={c.bodyY} width="12" height={c.bodyH} rx="2" fill={c.bull ? '#00f3ff30' : '#ff00aa30'} stroke={c.bull ? '#00f3ff' : '#ff00aa'} strokeWidth="1.5" />
+                                <line x1={c.x + 6} y1={c.wickY1} x2={c.x + 6} y2={c.wickY2} stroke={c.bull ? '#ffffff80' : '#88888880'} strokeWidth="1.5" />
+                                <rect x={c.x} y={c.bodyY} width="12" height={c.bodyH} rx="2" fill={c.bull ? '#ffffff30' : '#88888830'} stroke={c.bull ? '#ffffff' : '#888888'} strokeWidth="1.5" />
                               </g>
                             ))}
                           </svg>
@@ -139,7 +139,7 @@ const Hobbies = () => {
                             { icon: <Layers size={24} />, label: 'GPU Architecture' },
                           ].map(({ icon, label }, i) => (
                             <div key={i} className="flex flex-col items-center justify-center gap-3 p-4 glass rounded-xl text-sm text-gray-300 font-['DM_Sans'] hover:bg-white/5 transition-colors group">
-                              <span className="text-[var(--color-neon-blue)] group-hover:scale-110 transition-transform">{icon}</span>
+                              <span className="text-[var(--color-pure-white)] group-hover:scale-110 transition-transform">{icon}</span>
                               <span className="text-center font-medium">{label}</span>
                             </div>
                           ))}
@@ -151,7 +151,7 @@ const Hobbies = () => {
                           {hobbies[activeSlide].gamesList.map((game, i) => (
                             <span
                               key={i}
-                              className={`glass px-4 py-2 text-sm rounded-full border ${game.includes('Alan Wake') ? 'border-[#ff00aa]/60 text-white shadow-[0_0_12px_rgba(255,0,170,0.5)] bg-[#ff00aa]/10' : 'border-white/10 text-gray-300 hover:border-white/40 hover:text-white'} font-['DM_Sans'] transition-all cursor-default relative overflow-hidden group`}
+                              className={`glass px-4 py-2 text-sm rounded-full border ${game.includes('Alan Wake') ? 'border-white/60 text-white shadow-[0_0_12px_rgba(255,255,255,0.5)] bg-white/10' : 'border-white/10 text-gray-300 hover:border-white/40 hover:text-white'} font-['DM_Sans'] transition-all cursor-default relative overflow-hidden group`}
                             >
                               <span className="relative z-10">{game}</span>
                               {game.includes('Alan Wake') && (

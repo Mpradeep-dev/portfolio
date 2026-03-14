@@ -6,12 +6,12 @@ import { portfolioData } from '../data/portfolio_data';
 import { ScanLine, Layers, Workflow, Boxes, Binary, ShieldCheck } from 'lucide-react';
 
 const ICON_MAP = {
-  'AI & Computer Vision': <div className="glass-icon-container"><ScanLine size={24} className="text-sky-300" /></div>,
-  'Backend Technologies': <div className="glass-icon-container"><Layers size={24} className="text-violet-300" /></div>,
-  'DevOps & Tools': <div className="glass-icon-container"><Workflow size={24} className="text-slate-300" /></div>,
-  'Databases': <div className="glass-icon-container"><Boxes size={24} className="text-emerald-300" /></div>,
-  'Programming Languages': <div className="glass-icon-container"><Binary size={24} className="text-amber-300" /></div>,
-  'Data & ML Libraries': <div className="glass-icon-container"><ShieldCheck size={24} className="text-rose-300" /></div>,
+  'AI & Computer Vision': <div className="glass-icon-container"><ScanLine size={24} className="text-white" /></div>,
+  'Backend Technologies': <div className="glass-icon-container"><Layers size={24} className="text-gray-300" /></div>,
+  'DevOps & Tools': <div className="glass-icon-container"><Workflow size={24} className="text-gray-200" /></div>,
+  'Databases': <div className="glass-icon-container"><Boxes size={24} className="text-gray-400" /></div>,
+  'Programming Languages': <div className="glass-icon-container"><Binary size={24} className="text-white" /></div>,
+  'Data & ML Libraries': <div className="glass-icon-container"><ShieldCheck size={24} className="text-gray-300" /></div>,
 };
 
 const Skills = () => {
@@ -27,7 +27,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Technical Arsenal</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-neon-blue)] to-[var(--color-neon-purple)] mx-auto rounded-full box-glow" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -41,7 +41,7 @@ const Skills = () => {
                 {items.map((skill, i) => (
                   <span
                     key={i}
-                    className="glass px-3 py-1 text-sm rounded-full border border-[var(--color-neon-blue)]/20 text-gray-300 hover:border-[var(--color-neon-blue)] hover:text-white hover:shadow-[0_0_8px_rgba(0,243,255,0.4)] transition-all duration-200 cursor-default font-['DM_Sans']"
+                    className="glass px-3 py-1 text-sm rounded-full border border-[var(--color-pure-white)]/20 text-gray-300 hover:border-[var(--color-pure-white)] hover:text-white hover:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all duration-200 cursor-default font-['DM_Sans']"
                   >
                     {skill}
                   </span>
