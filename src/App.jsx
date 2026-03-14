@@ -8,10 +8,12 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <div className="min-h-screen selection:bg-[var(--color-neon-purple)] selection:text-white overflow-x-hidden">
+      <CustomCursor />
       {/* z-0: aurora orb background */}
       <AuroraBackground />
 

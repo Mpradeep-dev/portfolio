@@ -4,9 +4,9 @@ import { motion as Motion, useTransform } from 'framer-motion';
 import { useCursorSpot } from '../hooks/useCursorSpot';
 
 const ORB_CONFIG = [
-  { color: '#00f3ff', size: 600, keyframe: 'float-1', duration: '18s', multiplier: 30, top: '10%', left: '15%' },
-  { color: '#9d00ff', size: 500, keyframe: 'float-2', duration: '22s', multiplier: 50, top: '50%', left: '60%' },
-  { color: '#ff00aa', size: 400, keyframe: 'float-3', duration: '15s', multiplier: 20, top: '70%', left: '25%' },
+  { color: '#1d4ed8', size: 650, keyframe: 'float-1', duration: '18s', multiplier: 30, top: '10%', left: '15%' },
+  { color: '#5b21b6', size: 520, keyframe: 'float-2', duration: '22s', multiplier: 50, top: '50%', left: '60%' },
+  { color: '#9d174d', size: 420, keyframe: 'float-3', duration: '15s', multiplier: 20, top: '70%', left: '25%' },
 ];
 
 function Orb({ config, cursorX, cursorY }) {
@@ -24,7 +24,7 @@ function Orb({ config, cursorX, cursorY }) {
           borderRadius: '50%',
           background: config.color,
           filter: 'blur(120px)',
-          opacity: 0.35,
+          opacity: 0.28,
           animation: `${config.keyframe} ${config.duration} ease-in-out infinite`,
         }}
       />

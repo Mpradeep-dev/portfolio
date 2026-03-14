@@ -24,7 +24,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-5xl">
         <motion.div style={{ x: cardX, y: cardY }}>
-          <GlassCard className="p-8 md:p-12 lg:p-16 flex flex-col items-center text-center box-glow" delay={0}>
+          <GlassCard className="p-8 md:p-12 lg:p-16 flex flex-col items-center text-center" delay={0}>
 
             {/* Spinning ring avatar */}
             <motion.div
@@ -33,21 +33,25 @@ const Hero = () => {
               transition={{ duration: 0.5 }}
               className="relative mb-8"
             >
-              {/* Spinning conic-gradient ring */}
+              {/* Spinning ring */}
               <div
                 style={{
                   width: 168,
                   height: 168,
                   borderRadius: '50%',
-                  background: 'conic-gradient(from 0deg, #00f3ff, #9d00ff, #ff00aa, #00f3ff)',
-                  animation: 'spin-ring 4s linear infinite',
+                  background: 'conic-gradient(from 0deg, rgba(147,197,253,0.6), rgba(196,181,253,0.4), rgba(147,197,253,0.6))',
+                  animation: 'spin-ring 6s linear infinite',
                   position: 'absolute',
                   top: -4,
                   left: -4,
                 }}
               />
-              <div className="relative w-40 h-40 rounded-full glass flex items-center justify-center border-2 border-white/10 shadow-[0_0_30px_rgba(0,243,255,0.3)] bg-[#050505]">
-                <span className="text-5xl font-bold text-gradient font-['Syne']">PM</span>
+              <div className="relative w-40 h-40 rounded-full overflow-hidden border border-white/10 bg-[#050505]">
+                <img
+                  src="https://github.com/Mpradeep-dev.png"
+                  alt="Pradeep M"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
             </motion.div>
 
@@ -55,7 +59,7 @@ const Hero = () => {
               Hi, I&apos;m <span className="text-gradient">{name}</span>
             </motion.h1>
 
-            <motion.h2 {...stagger(0.3)} className="text-xl md:text-2xl font-medium text-gray-300 mb-6 neon-glow font-['DM_Sans']">
+            <motion.h2 {...stagger(0.3)} className="text-xl md:text-2xl font-medium text-gray-300 mb-6 font-['DM_Sans']">
               {title}
             </motion.h2>
 
@@ -66,7 +70,7 @@ const Hero = () => {
             <motion.div {...stagger(0.5)} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="flex items-center justify-center gap-2 glass px-8 py-3 rounded-full font-medium transition-all hover:border-[var(--color-neon-blue)] hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 glass px-8 py-3 rounded-full font-medium transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-1"
               >
                 View Projects <ChevronRight size={18} />
               </a>
@@ -74,13 +78,13 @@ const Hero = () => {
                 href="/pradeep_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-neon-blue)] to-[var(--color-neon-purple)] text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-[0_0_25px_rgba(0,243,255,0.5)] hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-3 rounded-full font-medium transition-all hover:bg-white/20 hover:border-white/40 hover:-translate-y-1"
               >
                 <Download size={18} /> Download Resume
               </a>
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 glass px-8 py-3 rounded-full font-medium transition-all hover:border-[var(--color-neon-purple)] hover:shadow-[0_0_15px_rgba(157,0,255,0.3)] hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 glass px-8 py-3 rounded-full font-medium transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-1"
               >
                 <Mail size={18} /> Contact Me
               </a>

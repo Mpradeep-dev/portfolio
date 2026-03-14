@@ -103,30 +103,63 @@ export const portfolioData = {
     ],
     hobbies: [
         {
-            name: "Gaming",
-            description: "Playing strategy and action games",
-            icon: "Gamepad2",
-            games: [
-                { title: "Days Gone", steamAppId: "1259420" },
-                { title: "Cyberpunk 2077", steamAppId: "1091500" },
-                { title: "Resident Evil 4", steamAppId: "2050650" },
-                { title: "Resident Evil 7 Biohazard", steamAppId: "418370" },
+            name: "Cryptocurrency Trading & Market Analysis",
+            description: "Actively analyze cryptocurrency markets and trade digital assets using technical indicators and market sentiment analysis.",
+            icon: "Bitcoin",
+            subTitle: "Key interests include:",
+            activities: [
+                "Market structure and price action analysis",
+                "Technical indicators (RSI, MACD, moving averages)",
+                "Risk management and portfolio allocation",
+                "Macro trends affecting digital asset markets",
+                "Blockchain ecosystem developments"
             ]
         },
         {
-            name: "Crypto trading",
-            description: "Analyzing markets and trading cryptocurrencies",
-            icon: "Bitcoin",
+            name: "Technology Exploration & Hardware Architecture",
+            description: "Enjoy exploring modern computing hardware and understanding how system architecture affects performance.",
+            icon: "Cpu",
+            subTitle: "Areas of exploration include:",
+            activities: [
+                "CPU architecture and instruction pipelines",
+                "GPU compute architectures for graphics and AI workloads",
+                "Memory systems and RAM performance tuning",
+                "Display technologies and refresh rate optimization",
+                "System performance benchmarking and optimization"
+            ]
         },
         {
-            name: "Technology exploration",
-            description: "Deep dives into PC hardware, silicon architecture, and performance tuning",
-            icon: "Cpu"
+            name: "Artificial Intelligence Experimentation",
+            description: "Regularly experiment with AI models, frameworks, and tools to explore new ideas and applications.",
+            icon: "Bot",
+            subTitle: "Activities & Focus areas:",
+            activities: [
+                "Prototyping computer vision and machine learning projects",
+                "Testing new AI models and frameworks",
+                "Experimenting with model optimization and inference pipelines",
+                "Building small proof-of-concept AI systems",
+                "Computer Vision experimentation",
+                "Model deployment and inference optimization",
+                "AI system architecture exploration"
+            ]
         },
         {
-            name: "AI experimentation",
-            description: "Prototyping new AI ideas and playing with models",
-            icon: "Bot"
+            name: "Continuous Learning & Technical Curiosity",
+            description: "Enjoy learning new technologies, reading technical documentation, and exploring how complex systems work internally.",
+            icon: "BookOpen",
+            subTitle: "This includes:",
+            activities: [
+                "Exploring new software tools and frameworks",
+                "Understanding system design patterns",
+                "Studying emerging technologies in AI and distributed systems"
+            ]
+        },
+        {
+            name: "Gaming",
+            description: "Story-driven & horror games (Alan Wake is my absolute favorite!)",
+            icon: "Gamepad2",
+            subTitle: "Favorite Games:",
+            gamesList: ["Alan Wake 1 & 2", "The Last of Us 1 & 2", "God of War Series", "Red Dead Redemption 2", "Resident Evil Series", "GTA 3, 4, 5 & SA", "Spider-Man 1 & 2", "Until Dawn", "Tomb Raider"]
         }
     ]
 };

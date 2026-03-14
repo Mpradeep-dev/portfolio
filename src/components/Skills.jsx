@@ -6,12 +6,12 @@ import { portfolioData } from '../data/portfolio_data';
 import { ScanLine, Layers, Workflow, Boxes, Binary, ShieldCheck } from 'lucide-react';
 
 const ICON_MAP = {
-  'AI & Computer Vision': <ScanLine size={24} className="text-[#00f3ff]" />,
-  'Backend Technologies': <Layers size={24} className="text-[#9d00ff]" />,
-  'DevOps & Tools': <Workflow size={24} className="text-[#ff00ff]" />,
-  'Databases': <Boxes size={24} className="text-[#00ff9d]" />,
-  'Programming Languages': <Binary size={24} className="text-[#ffff00]" />,
-  'Data & ML Libraries': <ShieldCheck size={24} className="text-[#ff3c00]" />,
+  'AI & Computer Vision': <div className="glass-icon-container"><ScanLine size={24} className="text-sky-300" /></div>,
+  'Backend Technologies': <div className="glass-icon-container"><Layers size={24} className="text-violet-300" /></div>,
+  'DevOps & Tools': <div className="glass-icon-container"><Workflow size={24} className="text-slate-300" /></div>,
+  'Databases': <div className="glass-icon-container"><Boxes size={24} className="text-emerald-300" /></div>,
+  'Programming Languages': <div className="glass-icon-container"><Binary size={24} className="text-amber-300" /></div>,
+  'Data & ML Libraries': <div className="glass-icon-container"><ShieldCheck size={24} className="text-rose-300" /></div>,
 };
 
 const Skills = () => {
@@ -33,10 +33,8 @@ const Skills = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(skills).map(([category, items], idx) => (
             <GlassCard key={category} delay={idx * 0.1} className="flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-lg glass bg-white/5">
-                  {ICON_MAP[category]}
-                </div>
+              <div className="flex items-center gap-4 mb-6">
+                {ICON_MAP[category]}
                 <h3 className="text-xl font-bold text-white tracking-wide font-['Syne']">{category}</h3>
               </div>
               <div className="flex flex-wrap gap-2">

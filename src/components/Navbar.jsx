@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // eslint-disable-line no-unused-vars
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -54,9 +54,8 @@ const Navbar = () => {
           style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
         >
           {/* Logo */}
-          <a href="#home" className="text-xl font-bold tracking-tighter font-['Syne']">
-            <span className="text-white">Pradeep</span>
-            <span className="text-gradient">.</span>
+          <a href="#home" className="text-xl font-bold tracking-tighter font-['Syne'] text-white">
+            Pradeep<span className="text-gray-400">.</span>
           </a>
 
           {/* Desktop Nav */}
@@ -69,7 +68,7 @@ const Navbar = () => {
               >
                 {link.name}
                 {activeSection === link.id && (
-                  <span className="block w-1 h-1 rounded-full bg-[var(--color-neon-blue)] mx-auto mt-1 shadow-[0_0_6px_rgba(0,243,255,0.8)]" />
+                  <span className="block w-1 h-1 rounded-full bg-white/70 mx-auto mt-1" />
                 )}
               </a>
             ))}
@@ -101,7 +100,7 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={cn(
                     'text-center py-2 font-medium transition-colors',
-                    activeSection === link.id ? 'text-[var(--color-neon-blue)]' : 'text-gray-300 hover:text-white'
+                    activeSection === link.id ? 'text-white' : 'text-gray-400 hover:text-white'
                   )}
                 >
                   {link.name}
