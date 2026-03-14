@@ -106,7 +106,12 @@ export const portfolioData = {
             name: "Gaming",
             description: "Playing strategy and action games",
             icon: "Gamepad2",
-            games: ["game1.jpg", "game2.jpg", "game3.jpg"] // Placeholder for UI mapping
+            games: [
+                { title: "Days Gone", steamAppId: "1259420" },
+                { title: "Cyberpunk 2077", steamAppId: "1091500" },
+                { title: "Resident Evil 4", steamAppId: "2050650" },
+                { title: "Resident Evil 7 Biohazard", steamAppId: "418370" },
+            ]
         },
         {
             name: "Crypto trading",
@@ -115,7 +120,7 @@ export const portfolioData = {
         },
         {
             name: "Technology exploration",
-            description: "Keeping up with the latest in tech world",
+            description: "Deep dives into PC hardware, silicon architecture, and performance tuning",
             icon: "Cpu"
         },
         {
