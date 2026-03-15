@@ -1,9 +1,13 @@
 // src/components/Skills.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GlassCard from './GlassCard';
 import { portfolioData } from '../data/portfolio_data';
 import { ScanLine, Layers, Workflow, Boxes, Binary, ShieldCheck } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ICON_MAP = {
   'AI & Computer Vision': <div className="glass-icon-container"><ScanLine size={24} className="text-white" /></div>,
@@ -16,34 +20,54 @@ const ICON_MAP = {
 
 const Skills = () => {
   const { skills } = portfolioData;
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.skill-pill', {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(1.7)',
+      stagger: 0.03,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    gsap.from('.skills-title', {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 85%',
+      },
+    });
+  }, { scope: sectionRef });
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="skills" ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-center">
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16 skills-title">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Technical Arsenal</h2>
           <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow" />
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(skills).map(([category, items], idx) => (
-            <GlassCard key={category} delay={idx * 0.1} className="flex flex-col h-full">
+            <GlassCard key={category} delay={idx * 0.1} className="flex flex-col h-full hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 {ICON_MAP[category]}
                 <h3 className="text-xl font-bold text-white tracking-wide font-['Syne']">{category}</h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {items.map((skill, i) => (
                   <span
                     key={i}
-                    className="glass px-3 py-1 text-sm rounded-full border border-[var(--color-pure-white)]/20 text-gray-300 hover:border-[var(--color-pure-white)] hover:text-white hover:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all duration-200 cursor-default font-['DM_Sans']"
+                    className="skill-pill px-4 py-2 rounded-full text-sm font-medium bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] text-gray-300 hover:text-white hover:bg-[var(--color-glass-highlight)] transition-colors inline-flex"
                   >
-                    {skill}
+                    {typeof skill === 'object' ? skill.name : skill}
                   </span>
                 ))}
               </div>

@@ -10,12 +10,46 @@ export const portfolioData = {
         github: "https://github.com/Mpradeep-dev"
     },
     skills: {
-        "AI & Computer Vision": ["YOLO (Ultralytics)", "MediaPipe", "OpenCV", "Deep Learning", "Pose Estimation", "Object Detection"],
-        "Backend Technologies": ["FastAPI", "Spring Boot", "SQLAlchemy", "Pydantic", "REST APIs", "Microservices"],
-        "DevOps & Tools": ["Docker", "Nginx", "RabbitMQ", "Redis", "GitHub Actions", "Linux", "Postman", "Swagger"],
-        "Databases": ["PostgreSQL", "MySQL", "H2", "Minio"],
-        "Programming Languages": ["Python", "Java", "SQL"],
-        "Data & ML Libraries": ["NumPy", "Pandas", "Matplotlib"]
+        "AI & Computer Vision": [
+            { name: "YOLO (Ultralytics)", value: 95 },
+            { name: "MediaPipe", value: 90 },
+            { name: "OpenCV", value: 95 },
+            { name: "Deep Learning", value: 85 },
+            { name: "Pose Estimation", value: 90 },
+            { name: "Object Detection", value: 95 }
+        ],
+        "Backend Technologies": [
+            { name: "FastAPI", value: 95 },
+            { name: "Spring Boot", value: 80 },
+            { name: "SQLAlchemy", value: 90 },
+            { name: "Pydantic", value: 95 },
+            { name: "REST APIs", value: 95 },
+            { name: "Microservices", value: 85 }
+        ],
+        "DevOps & Tools": [
+            { name: "Docker", value: 90 },
+            { name: "Nginx", value: 85 },
+            { name: "RabbitMQ", value: 80 },
+            { name: "Redis", value: 85 },
+            { name: "GitHub Actions", value: 80 },
+            { name: "Linux", value: 90 }
+        ],
+        "Databases": [
+            { name: "PostgreSQL", value: 90 },
+            { name: "MySQL", value: 85 },
+            { name: "H2", value: 80 },
+            { name: "Minio", value: 85 }
+        ],
+        "Programming Languages": [
+            { name: "Python", value: 95 },
+            { name: "Java", value: 85 },
+            { name: "SQL", value: 90 }
+        ],
+        "Data & ML Libraries": [
+            { name: "NumPy", value: 90 },
+            { name: "Pandas", value: 85 },
+            { name: "Matplotlib", value: 80 }
+        ]
     },
     experience: [
         {

@@ -6,6 +6,7 @@ import { cn } from '../utils/cn';
 
 const navLinks = [
   { name: 'Home', href: '#home', id: 'home' },
+  { name: 'About', href: '#about', id: 'about' },
   { name: 'Skills', href: '#skills', id: 'skills' },
   { name: 'Experience', href: '#experience', id: 'experience' },
   { name: 'Projects', href: '#projects', id: 'projects' },
