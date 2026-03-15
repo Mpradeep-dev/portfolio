@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import bgImage from '../assets/bg.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,7 @@ export default function ParallaxBackground() {
                 ref={bgRef}
                 className="absolute inset-0 w-full h-full will-change-transform"
                 style={{
-                    backgroundImage: `url('/src/assets/bg.jpg')`, // Needs proper resolution if imported as module
+                    backgroundImage: `url(${bgImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',

@@ -1,27 +1,9 @@
-import React, { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import React from 'react';
 import GlassCard from './GlassCard';
 
 export default function About() {
-    const sectionRef = useRef(null);
-
-    useGSAP(() => {
-        gsap.from('.about-card', {
-            y: 50,
-            opacity: 0,
-            duration: 1.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'top 80%',
-                toggleActions: 'play none none none',
-            },
-        });
-    }, { scope: sectionRef });
-
     return (
-        <section id="about" ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-center">
+        <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-center">
             <div className="container mx-auto max-w-5xl">
                 <GlassCard className="about-card p-8 md:p-12 lg:p-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 font-['Syne'] text-gradient text-center">About Me</h2>
