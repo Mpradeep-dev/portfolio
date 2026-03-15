@@ -70,7 +70,7 @@ const Hero = () => {
             <motion.div {...stagger(0.5)} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="flex items-center justify-center gap-2 glass px-8 py-3 rounded-full font-medium transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 w-full sm:w-auto glass px-8 py-3 rounded-full font-medium transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-1"
               >
                 View Projects <ChevronRight size={18} />
               </a>
@@ -78,13 +78,13 @@ const Hero = () => {
                 href="/pradeep_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-3 rounded-full font-medium transition-all hover:bg-white/20 hover:border-white/40 hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 border border-white/20 text-white px-8 py-3 rounded-full font-medium transition-all hover:bg-white/20 hover:border-white/40 hover:-translate-y-1"
               >
                 <Download size={18} /> Download Resume
               </a>
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 glass px-8 py-3 rounded-full font-medium transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 w-full sm:w-auto glass px-8 py-3 rounded-full font-medium transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-1"
               >
                 <Mail size={18} /> Contact Me
               </a>

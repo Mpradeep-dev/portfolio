@@ -36,7 +36,7 @@ export default function AuroraBackground() {
   const { cursorX, cursorY } = useCursorSpot();
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div className="hidden md:block pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {ORB_CONFIG.map((config, i) => (
         <Orb key={i} config={config} cursorX={cursorX} cursorY={cursorY} />
       ))}
