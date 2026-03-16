@@ -93,7 +93,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="md:hidden absolute top-full left-4 right-4 mt-2 pointer-events-auto"
           >
-            <div className="glass rounded-2xl p-4 flex flex-col space-y-4">
+            <div className="glass rounded-2xl p-6 flex flex-col space-y-4 bg-black/90 backdrop-blur-3xl border border-white/20">
               {navLinks.map((link) => (
                 <a
                   key={link.name}

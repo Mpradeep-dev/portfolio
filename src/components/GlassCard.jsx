@@ -41,7 +41,7 @@ const GlassCard = ({ children, className, delay = 0, ...props }) => {
       }}
       className={cn(
         'glass p-6 relative group',
-        'hover:border-[var(--color-pure-white)] transition-colors duration-300',
+        'hover:border-[var(--color-pure-white)] hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-colors duration-300',
         className
       )}
       {...props}
