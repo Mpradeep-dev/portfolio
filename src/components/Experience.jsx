@@ -101,7 +101,7 @@ const Experience = () => {
             <div key={idx} className="exp-item relative pl-12 md:pl-20 mb-12">
               {/* Neon dot on timeline */}
               <div
-                className="timeline-dot absolute left-[10px] md:left-[26px] top-6 w-3 h-3 rounded-full bg-[var(--color-pure-white)] shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                className="timeline-dot absolute left-[10px] md:left-[26px] top-6 w-3 h-3 rounded-full bg-[var(--color-pure-white)]"
               />
 
               <div className="experience-card will-change-transform">

@@ -97,10 +97,10 @@ const Hero = () => {
             </div>
 
             <div className="flex gap-6 mt-12 gsap-reveal">
-              <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all">
+              <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all">
                 <Github size={28} />
               </a>
-              <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#0077b5] hover:drop-shadow-[0_0_8px_rgba(0,119,181,0.8)] transition-all">
+              <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#0077b5] transition-all">
                 <Linkedin size={28} />
               </a>
             </div>

@@ -94,7 +94,7 @@ const Projects = () => {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 font-['DM_Sans'] ${filter === cat
-                  ? 'bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black shadow-[0_0_15px_rgba(255,255,255,0.4)]'
+                  ? 'bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black'
                   : 'glass text-gray-300 hover:text-white hover:border-[var(--color-pure-white)]'
                   }`}
               >
@@ -106,7 +106,7 @@ const Projects = () => {
 
         {loading ? (
           <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[var(--color-pure-white)] shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[var(--color-pure-white)]" />
           </div>
         ) : (
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -121,7 +121,7 @@ const Projects = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="project-card-wrapper h-full">
-                    <GlassCard className="h-full flex flex-col items-start hover:scale-[1.03] hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6)] hover:border-white/30 transition-all duration-300 group">
+                    <GlassCard className="h-full flex flex-col items-start hover:scale-[1.03] hover:-translate-y-2 hover:border-white/30 transition-all duration-300 group">
                       <div className="flex justify-between items-start w-full mb-4">
                         <div className="p-3 rounded-lg glass bg-[var(--color-pure-white)]/10 text-[var(--color-pure-white)] group-hover:bg-[var(--color-pure-white)]/20 transition-colors">
                           <Code2 size={24} />

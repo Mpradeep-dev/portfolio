@@ -56,7 +56,7 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(skills).map(([category, items], idx) => (
-            <GlassCard key={category} delay={idx * 0.1} className="flex flex-col h-full hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300">
+            <GlassCard key={category} delay={idx * 0.1} className="flex flex-col h-full hover:scale-[1.02] transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 {ICON_MAP[category]}
                 <h3 className="text-xl font-bold text-white tracking-wide font-['Syne']">{category}</h3>

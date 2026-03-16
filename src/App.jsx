@@ -4,7 +4,7 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import AuroraBackground from './components/AuroraBackground';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -34,15 +34,7 @@ function App() {
         <CustomCursor />
         {/* z-0: background animations */}
         <ParallaxBackground />
-        <AuroraBackground />
 
-        {/* z-1: cursor spotlight radial gradient */}
-        <div
-          className="pointer-events-none fixed inset-0 z-[1]"
-          style={{
-            background: 'radial-gradient(600px circle at var(--cx, 50%) var(--cy, 50%), rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 40%, transparent 80%)'
-          }}
-        />
 
         {/* z-10+: all UI content */}
         <Navbar />
