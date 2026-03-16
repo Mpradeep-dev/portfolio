@@ -18,13 +18,36 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Scroll: used only for padding, not for glass toggle
+  // Scroll visibility + Padding logic
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Toggle padding/scrolled state
+      setScrolled(currentScrollY > 50);
+
+      // Hide/Show logic: 
+      // 1. Hide if scrolling down and past 100px
+      // 2. Show if scrolling up
+      // 3. Always show if at top
+      if (currentScrollY < 10) {
+        setVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false);
+        setIsOpen(false); // Auto-close menu if scrolling
+      } else {
+        setVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Active section via IntersectionObserver
   useEffect(() => {
@@ -45,14 +68,17 @@ const Navbar = () => {
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none', scrolled ? 'py-4' : 'py-6')}
+      animate={{ y: visible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none',
+        scrolled ? 'py-4' : 'py-6'
+      )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="flex items-center justify-between px-6 py-3 mx-auto max-w-5xl rounded-full glass pointer-events-auto"
-          style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+          style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
         >
           {/* Logo */}
           <a href="#home" className="text-xl font-bold tracking-tighter font-['Syne'] text-white">
@@ -88,12 +114,13 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-4 right-4 mt-2 pointer-events-auto"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="md:hidden absolute top-full left-4 right-4 mt-2 pointer-events-auto will-change-transform"
           >
-            <div className="glass rounded-2xl p-6 flex flex-col space-y-4 bg-black/90 backdrop-blur-3xl border border-white/20">
+            <div className="glass rounded-2xl p-6 flex flex-col space-y-4 bg-black/90 backdrop-blur-2xl border border-white/20 shadow-2xl">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
