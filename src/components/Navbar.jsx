@@ -47,11 +47,11 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300', scrolled ? 'py-4' : 'py-6')}
+      className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none', scrolled ? 'py-4' : 'py-6')}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="flex items-center justify-between px-6 py-3 mx-auto max-w-5xl rounded-full glass"
+          className="flex items-center justify-between px-6 py-3 mx-auto max-w-5xl rounded-full glass pointer-events-auto"
           style={{ backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
         >
           {/* Logo */}
@@ -91,7 +91,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-4 right-4 mt-2"
+            className="md:hidden absolute top-full left-4 right-4 mt-2 pointer-events-auto"
           >
             <div className="glass rounded-2xl p-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
