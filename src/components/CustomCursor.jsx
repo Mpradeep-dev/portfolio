@@ -28,7 +28,7 @@ const CustomCursor = () => {
         <>
             {/* Main Cursor Dot */}
             <motion.div
-                className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] mix-blend-screen"
+                className="hidden md:block fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] mix-blend-screen"
                 style={{
                     x: cursorX,
                     y: cursorY,
