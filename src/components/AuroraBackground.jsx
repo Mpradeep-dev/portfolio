@@ -22,9 +22,8 @@ function Orb({ config, cursorX, cursorY }) {
           width: config.size,
           height: config.size,
           borderRadius: '50%',
-          background: config.color,
-          filter: 'blur(120px)',
-          opacity: 0.28,
+          background: `radial-gradient(circle, ${config.color} 0%, transparent 70%)`,
+          opacity: 0.35,
           animation: `${config.keyframe} ${config.duration} ease-in-out infinite`,
         }}
       />

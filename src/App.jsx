@@ -40,7 +40,7 @@ function App() {
         <div
           className="pointer-events-none fixed inset-0 z-[1]"
           style={{
-            background: 'radial-gradient(600px circle at var(--cx, 50%) var(--cy, 50%), rgba(255,255,255,0.06), transparent 80%)'
+            background: 'radial-gradient(600px circle at var(--cx, 50%) var(--cy, 50%), rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 40%, transparent 80%)'
           }}
         />
 
