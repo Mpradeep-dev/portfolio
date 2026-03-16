@@ -52,7 +52,7 @@ const Hobbies = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveSlide(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeSlide === idx ? 'bg-[var(--color-pure-white)] w-8 shadow-[0_0_10px_var(--color-pure-white)]' : 'bg-white/20 hover:bg-white/40'
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeSlide === idx ? 'bg-[var(--color-pure-white)] w-8' : 'bg-white/20 hover:bg-white/40'
                     }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -80,7 +80,7 @@ const Hobbies = () => {
               >
                 <GlassCard delay={0} className={`border-t-4 ${BORDER_COLORS[hobbies[activeSlide].icon]} flex flex-col h-full bg-black/40 backdrop-blur-md`}>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-                    <div className="p-4 rounded-xl bg-gray-800/50 shrink-0 shadow-lg">
+                    <div className="p-4 rounded-xl bg-gray-800/50 shrink-0 border border-white/5">
                       {HOBBY_ICONS[hobbies[activeSlide].icon]}
                     </div>
                     <div>
@@ -151,7 +151,7 @@ const Hobbies = () => {
                           {hobbies[activeSlide].gamesList.map((game, i) => (
                             <span
                               key={i}
-                              className={`glass px-4 py-2 text-sm rounded-full border ${game.includes('Alan Wake') ? 'border-white/60 text-white shadow-[0_0_12px_rgba(255,255,255,0.5)] bg-white/10' : 'border-white/10 text-gray-300 hover:border-white/40 hover:text-white'} font-['DM_Sans'] transition-all cursor-default relative overflow-hidden group`}
+                              className={`glass px-4 py-2 text-sm rounded-full border border-white/10 text-gray-300 hover:border-white/40 hover:text-white font-['DM_Sans'] transition-all cursor-default relative overflow-hidden group`}
                             >
                               <span className="relative z-10">{game}</span>
                               {game.includes('Alan Wake') && (

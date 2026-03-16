@@ -54,7 +54,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Get In Touch</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full mb-8" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -75,15 +75,15 @@ const Contact = () => {
             </div>
             <div className="flex flex-col space-y-4">
               <a href={`mailto:${email}`} className="flex items-center gap-4 text-xl font-medium text-gray-300 hover:text-[var(--color-pure-white)] transition-colors group font-['DM_Sans']">
-                <div className="p-3 glass rounded-full group-hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all">
+                <div className="p-3 glass rounded-full transition-all">
                   <Mail className="text-[var(--color-pure-white)]" />
                 </div>
                 {email}
               </a>
               <div className="flex gap-4 mt-4 pt-4 border-t border-[var(--color-glass-border)] w-fit">
-                <a href={github} target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-gray-400 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all"><Github /></a>
-                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-gray-400 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all"><Linkedin /></a>
-                <a href="/pradeep_resume.pdf" target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-gray-400 hover:text-[var(--color-pure-white)] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all"><Download /></a>
+                <a href={github} target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-gray-400 hover:text-white transition-all"><Github /></a>
+                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-gray-400 hover:text-white transition-all"><Linkedin /></a>
+                <a href="/pradeep_resume.pdf" target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-gray-400 hover:text-[var(--color-pure-white)] transition-all"><Download /></a>
               </div>
             </div>
           </motion.div>
@@ -102,7 +102,7 @@ const Contact = () => {
                 <FloatingInput id="message" label="Message" isTextarea />
                 <button
                   type="submit"
-                  className="w-full relative group overflow-hidden bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all font-['DM_Sans']"
+                  className="w-full relative group overflow-hidden bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all font-['DM_Sans']"
                 >
                   {sent ? (
                     <span className="text-black font-semibold">✓ Message sent!</span>
