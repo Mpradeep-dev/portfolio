@@ -15,10 +15,6 @@
 @layer base {
   body {
     background-color: var(--color-dark-bg);
-    background-image: url('./assets/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     color: white;
     font-family: 'DM Sans', system-ui, sans-serif;
     min-height: 100vh;
