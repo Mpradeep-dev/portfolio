@@ -127,10 +127,10 @@ const ChatBot = () => {
           <motion.span
             aria-hidden="true"
             animate={handControls}
-            style={{ transformOrigin: '70% 90%' }}
-            className="absolute -top-1.5 -right-1.5 flex items-center justify-center w-5 h-5 rounded-full glass border border-white/25 text-white"
+            style={{ transformOrigin: '70% 90%', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.6))' }}
+            className="absolute top-2 right-2 text-white"
           >
-            <Hand size={12} />
+            <Hand size={14} />
           </motion.span>
         )}
       </button>
