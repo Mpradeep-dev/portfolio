@@ -36,7 +36,6 @@ export default function ParallaxBackground() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
-                    filter: 'grayscale(100%) brightness(0.6)',
                 }}
             />
             {/* Dark overlay to ensure text readability */}
