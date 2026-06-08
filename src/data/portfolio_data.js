@@ -1,8 +1,8 @@
 export const portfolioData = {
     personalInfo: {
-        name: "Pradeep M",
+        name: "Pradeep Murugesan",
         title: "AI Engineer",
-        summary: "AI Engineer specializing in computer vision systems and scalable backend architectures. Experienced in designing distributed AI pipelines, deploying machine learning inference services, and building high-performance APIs using FastAPI and Docker. Skilled in Python, Java, and cloud-native infrastructure for production AI applications.",
+        summary: "AI Engineer specializing in real-time computer vision and GenAI systems, building low-latency GPU-accelerated inference pipelines and scalable microservice architectures. Experienced in deploying end-to-end AI solutions from model training and ONNX/TensorRT optimization to production-grade FastAPI services and RAG-based AI systems using LangChain and vector databases. Experienced with MLOps practices including Docker, Kubernetes, and CI/CD pipelines, with a focus on reliable backend engineering and cloud deployment.",
         email: "pradeepmurugesan.dev@gmail.com",
         phone: "+91 9629810007",
         location: "Salem, Tamil Nadu, India",
@@ -10,110 +10,115 @@ export const portfolioData = {
         github: "https://github.com/Mpradeep-dev"
     },
     skills: {
-        "AI & Computer Vision": [
-            { name: "YOLO (Ultralytics)", value: 95 },
-            { name: "MediaPipe", value: 90 },
-            { name: "OpenCV", value: 95 },
-            { name: "Deep Learning", value: 85 },
-            { name: "Pose Estimation", value: 90 },
-            { name: "Object Detection", value: 95 }
+        "Computer Vision": [
+            "YOLO", "YOLO-Pose", "OpenCV", "ONNX", "OpenVINO", "TensorRT", "EfficientNet"
         ],
-        "Backend Technologies": [
-            { name: "FastAPI", value: 95 },
-            { name: "Spring Boot", value: 80 },
-            { name: "SQLAlchemy", value: 90 },
-            { name: "Pydantic", value: 95 },
-            { name: "REST APIs", value: 95 },
-            { name: "Microservices", value: 85 }
+        "Generative AI": [
+            "LangChain", "LangFlow", "RAG Pipelines", "Embeddings", "Qdrant", "Pinecone", "Local Ollama", "vLLM"
         ],
-        "DevOps & Tools": [
-            { name: "Docker", value: 90 },
-            { name: "Nginx", value: 85 },
-            { name: "RabbitMQ", value: 80 },
-            { name: "Redis", value: 85 },
-            { name: "GitHub Actions", value: 80 },
-            { name: "Linux", value: 90 }
+        "Backend": [
+            "FastAPI", "Spring Boot", "SQLAlchemy", "REST APIs", "Microservices", "RabbitMQ", "Redis"
+        ],
+        "MLOps & DevOps": [
+            "Docker", "Kubernetes (AKS)", "Nginx", "GitHub Actions", "CI/CD", "Git", "Linux"
         ],
         "Databases": [
-            { name: "PostgreSQL", value: 90 },
-            { name: "MySQL", value: 85 },
-            { name: "H2", value: 80 },
-            { name: "Minio", value: 85 }
+            "PostgreSQL", "MySQL", "Minio", "Supabase"
         ],
-        "Programming Languages": [
-            { name: "Python", value: 95 },
-            { name: "Java", value: 85 },
-            { name: "SQL", value: 90 }
+        "Languages & ML Libs": [
+            "Python", "Java", "SQL", "PyTorch", "NumPy", "Pandas", "Matplotlib"
         ],
-        "Data & ML Libraries": [
-            { name: "NumPy", value: 90 },
-            { name: "Pandas", value: 85 },
-            { name: "Matplotlib", value: 80 }
+        "AI Agents & Tools": [
+            "Claude", "GitHub Copilot", "Codex", "Gemini CLI"
         ]
     },
     experience: [
         {
             role: "AI Engineer",
             company: "Global Tech Professionals, London",
-            duration: "Oct 2025 – Present",
+            duration: "Mar 2025 – Present",
             description: "Computer Vision & Backend Engineering | Remote",
             responsibilities: [
-                "Designed and deployed real-time computer vision pipelines using YOLO and MediaPipe integrated with FastAPI services.",
-                "Built scalable microservices and asynchronous task pipelines using RabbitMQ and Redis.",
-                "Containerized AI and backend applications using Docker and managed deployments via Nginx.",
-                "Optimized model inference performance and API response latency for production environments."
+                "Developed real-time computer vision systems using YOLO and YOLO-Pose, integrated with FastAPI for low-latency inference for real-time video processing applications.",
+                "Built asynchronous video processing pipelines for model inference and request queuing, improving throughput for batch inference workloads.",
+                "Optimized model performance using TensorRT conversion and batching techniques for faster GPU inference.",
+                "Implemented and maintained REST APIs and backend services supporting AI workloads, enabling reliable integration with downstream systems.",
+                "Developed a real-time chatbot integrated with the backend services to deliver instant, AI-driven responses to user queries."
             ],
-            technologies: ["YOLO", "MediaPipe", "FastAPI", "RabbitMQ", "Redis", "Docker", "Nginx"]
+            technologies: ["YOLO", "YOLO-Pose", "FastAPI", "TensorRT", "RabbitMQ", "Redis", "Docker"]
         },
         {
             role: "Freelance Computer Vision Engineer",
             company: "Self-Employed",
-            duration: "2026 – Present",
+            duration: "Jul 2024 – Mar 2025",
             description: "Computer Vision & Deep Learning | Remote",
             responsibilities: [
-                "Developed custom computer vision solutions using deep learning and image processing.",
-                "Implemented object detection, pose estimation, and motion analysis systems using Python and OpenCV.",
-                "Improved model accuracy through hyperparameter tuning, evaluation metrics, and dataset optimization.",
-                "Delivered end-to-end AI solutions from model design to deployment."
+                "Delivered 3+ computer vision solutions for object detection, pose estimation, and motion analysis using Python, OpenCV, and YOLO with GPU-accelerated inference.",
+                "Improved model performance across projects through hyperparameter tuning, dataset augmentation, and transfer learning; deployed inference services using FastAPI and Docker."
             ],
-            technologies: ["Python", "OpenCV", "Deep Learning", "Image Processing"]
+            technologies: ["Python", "OpenCV", "YOLO", "FastAPI", "Docker"]
         },
         {
-            role: "Intern — IT Solutions & Project Management",
+            role: "Java Back End Developer Intern",
             company: "SplendensLab IT Ventures, Salem",
-            duration: "Oct 2024",
-            description: "IT Solutions & Project Management",
+            duration: "Jan 2024 – Jun 2024",
+            description: "Backend Development | On-site",
             responsibilities: [
-                "Assisted in software development workflows and project execution for enterprise IT solutions.",
-                "Collaborated with developers to understand system requirements and implementation processes.",
-                "Supported testing, documentation, and deployment activities for software projects.",
-                "Gained exposure to project management and software lifecycle methodologies."
+                "Developed REST APIs using Spring Boot and implemented CRUD operations with PostgreSQL database integration.",
+                "Built backend modules following MVC architecture and full development lifecycle practices.",
+                "Validated APIs using Postman and documented endpoints with Swagger."
             ],
-            technologies: []
+            technologies: ["Java", "Spring Boot", "PostgreSQL", "Postman", "Swagger"]
         }
     ],
     projects: [
         {
+            name: "WoundCare-AI",
+            description: "Intelligent wound assessment & monitoring platform: YOLO instance segmentation and EfficientNet classification with JWT-secured FastAPI services and RabbitMQ async processing.",
+            technologies: ["Flutter", "FastAPI", "RabbitMQ", "PostgreSQL", "Docker", "GitHub Actions", "OpenCV", "YOLO", "EfficientNet"],
+            link: "https://github.com/solnae-tech",
+            category: "AI / ML"
+        },
+        {
             name: "ESTIMAX-AI",
-            description: "AI Blueprint Estimation System integrating Flutter clients, FastAPI microservices, and Modal inference workers.",
-            technologies: ["Flutter", "FastAPI", "RabbitMQ", "Supabase", "Modal", "Docker", "YOLOv8n", "OpenCV"],
+            description: "AI Blueprint Estimation System integrating Flutter clients, FastAPI microservices, and Modal inference workers for engineering symbol detection.",
+            technologies: ["Flutter", "FastAPI", "RabbitMQ", "Supabase", "Modal", "Docker", "YOLO", "OpenCV"],
             link: "https://github.com/EstimaX-AI",
             category: "AI / ML"
         },
         {
+            name: "FAQ-Bot",
+            description: "RAG-based FAQ chatbot grounding answers in a knowledge base via semantic embeddings and Qdrant vector search, running a local Ollama LLM with Redis conversational memory.",
+            technologies: ["Qdrant", "Embeddings", "Local Ollama", "Redis"],
+            link: "https://github.com/Mpradeep-dev/FAQ-bot",
+            category: "AI / ML"
+        },
+        {
             name: "AI_Trainer",
-            description: "Real-time AI sports training system for gym workouts and football performance analysis using pose estimation.",
-            technologies: ["YOLO", "YOLO-Pose", "MediaPipe", "OpenCV", "Python"],
+            description: "Real-time AI coaching system using YOLO-Pose for human pose estimation and instant visual feedback on gym exercise form.",
+            technologies: ["YOLO-Pose", "OpenCV", "Python"],
             link: "https://github.com/Mpradeep-dev/AI_Trainer",
             category: "AI / ML"
         },
         {
             name: "drowsiness-detection",
-            description: "Real-time driver fatigue detection system using facial landmarks and Eye Aspect Ratio (EAR).",
+            description: "Real-time driver fatigue detection system using Dlib facial landmarks and Eye Aspect Ratio (EAR) analysis at ~30 FPS.",
             technologies: ["OpenCV", "Dlib", "Python"],
             link: "https://github.com/Mpradeep-dev/drowsiness-detection",
             category: "AI / ML"
         }
+    ],
+    certifications: [
+        { name: "Computer Vision 101", issuer: "Infosys Springboard" },
+        { name: "Computer Vision with Python", issuer: "Udemy" },
+        { name: "Overview of APIs & Microservices", issuer: "Infosys Springboard" },
+        { name: "RESTful API Design", issuer: "Infosys Springboard" },
+        { name: "Python for Data Analysis", issuer: "Udemy" },
+        { name: "Mastering MySQL", issuer: "Udemy" },
+        { name: "GitHub Professional Certificate", issuer: "GitHub" }
+    ],
+    achievements: [
+        { title: "1st Place, Codathon", detail: "Kongu Engineering College", year: "2025" }
     ],
     education: [
         {

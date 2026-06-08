@@ -5,17 +5,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GlassCard from './GlassCard';
 import { portfolioData } from '../data/portfolio_data';
-import { ScanLine, Layers, Workflow, Boxes, Binary, ShieldCheck } from 'lucide-react';
+import { ScanLine, Layers, Workflow, Boxes, Binary, Sparkles, Bot } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ICON_MAP = {
-  'AI & Computer Vision': <div className="glass-icon-container"><ScanLine size={24} className="text-white" /></div>,
-  'Backend Technologies': <div className="glass-icon-container"><Layers size={24} className="text-gray-300" /></div>,
-  'DevOps & Tools': <div className="glass-icon-container"><Workflow size={24} className="text-gray-200" /></div>,
+  'Computer Vision': <div className="glass-icon-container"><ScanLine size={24} className="text-white" /></div>,
+  'Generative AI': <div className="glass-icon-container"><Sparkles size={24} className="text-gray-200" /></div>,
+  'Backend': <div className="glass-icon-container"><Layers size={24} className="text-gray-300" /></div>,
+  'MLOps & DevOps': <div className="glass-icon-container"><Workflow size={24} className="text-gray-200" /></div>,
   'Databases': <div className="glass-icon-container"><Boxes size={24} className="text-gray-400" /></div>,
-  'Programming Languages': <div className="glass-icon-container"><Binary size={24} className="text-white" /></div>,
-  'Data & ML Libraries': <div className="glass-icon-container"><ShieldCheck size={24} className="text-gray-300" /></div>,
+  'Languages & ML Libs': <div className="glass-icon-container"><Binary size={24} className="text-white" /></div>,
+  'AI Agents & Tools': <div className="glass-icon-container"><Bot size={24} className="text-gray-300" /></div>,
 };
 
 const Skills = () => {

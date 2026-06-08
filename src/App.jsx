@@ -11,6 +11,8 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
+import Achievements from './components/Achievements';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
@@ -44,12 +46,14 @@ function App() {
           <Skills />
           <Experience />
           <Projects />
+          <Certifications />
+          <Achievements />
           <Hobbies />
           <Contact />
         </main>
 
         <footer className="relative z-10 py-8 text-center text-gray-500 border-t border-[var(--color-glass-border)] glass rounded-t-3xl mt-12 w-full backdrop-blur-xl">
-          <p>© {new Date().getFullYear()} Pradeep M. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pradeep Murugesan. All rights reserved.</p>
           <p className="text-sm mt-2 font-['DM_Sans']">Designed with <span className="text-[var(--color-pure-white)]">Glassmorphism</span> & Monochrome</p>
         </footer>
       </div>
