@@ -145,10 +145,10 @@ const ChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed z-50 flex flex-col bg-black/80 backdrop-blur-2xl border border-white/15 shadow-2xl print:hidden
+            className="fixed z-50 flex flex-col overflow-hidden bg-black/80 backdrop-blur-2xl border border-white/15 shadow-2xl print:hidden
                        inset-x-4 bottom-24 rounded-2xl
                        sm:inset-x-auto sm:right-5 sm:bottom-24 sm:w-[380px]
-                       h-[60vh] sm:h-[520px] max-h-[70vh]"
+                       max-h-[60vh] sm:max-h-[520px]"
           >
             {/* Header */}
             <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
@@ -167,7 +167,7 @@ const ChatBot = () => {
             </div>
 
             {/* Messages */}
-            <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-3" aria-live="polite">
+            <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-4 py-4 space-y-3" aria-live="polite">
               {messages.map((m, i) => (
                 <div key={i} className={cn('flex', m.role === 'user' ? 'justify-end' : 'justify-start')}>
                   <div
