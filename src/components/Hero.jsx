@@ -35,41 +35,36 @@ const Hero = () => {
     <section id="home" ref={heroRef} className="min-h-screen flex items-center justify-center pt-20 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-5xl">
         <motion.div style={{ x: cardX, y: cardY }}>
-          <GlassCard className="p-8 md:p-12 lg:p-16 flex flex-col items-center text-center" delay={0}>
+          <GlassCard className="p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-center text-center" delay={0}>
 
             {/* Spinning ring avatar */}
-            <div className="relative mb-8 gsap-reveal">
+            <div className="relative w-28 h-28 sm:w-40 sm:h-40 mb-5 sm:mb-8 gsap-reveal">
               {/* Spinning ring */}
               <div
+                className="absolute -inset-1 rounded-full"
                 style={{
-                  width: 168,
-                  height: 168,
-                  borderRadius: '50%',
                   background: 'conic-gradient(from 0deg, rgba(255,255,255,0.6), rgba(200,200,200,0.4), rgba(255,255,255,0.6))',
                   animation: 'spin-ring 6s linear infinite',
-                  position: 'absolute',
-                  top: -4,
-                  left: -4,
                 }}
               />
-              <div className="relative w-40 h-40 rounded-full overflow-hidden border border-white/10 bg-[#050505]">
+              <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 bg-[#050505]">
                 <img
                   src="https://github.com/Mpradeep-dev.png"
-                  alt="Pradeep M"
+                  alt={name}
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 font-['Syne'] gsap-reveal">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4 font-['Syne'] gsap-reveal">
               Hi, I&apos;m <span className="text-gradient">{name}</span>
             </h1>
 
-            <h2 className="text-xl md:text-2xl font-medium text-gray-300 mb-6 font-['DM_Sans'] gsap-reveal">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-300 mb-4 sm:mb-6 font-['DM_Sans'] gsap-reveal">
               {title}
             </h2>
 
-            <p className="text-base md:text-lg text-gray-400 max-w-2xl mb-10 leading-relaxed font-['DM_Sans'] gsap-reveal">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mb-7 sm:mb-10 leading-relaxed font-['DM_Sans'] gsap-reveal">
               {tagline}
             </p>
 
@@ -96,7 +91,7 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="flex gap-6 mt-12 gsap-reveal">
+            <div className="flex gap-6 mt-8 sm:mt-12 gsap-reveal">
               <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all">
                 <Github size={28} />
               </a>
