@@ -2,6 +2,7 @@ export const portfolioData = {
     personalInfo: {
         name: "Pradeep Murugesan",
         title: "AI Engineer",
+        tagline: "Building real-time computer vision and GenAI systems — from GPU-optimized model inference to scalable FastAPI backends.",
         summary: "AI Engineer specializing in real-time computer vision and GenAI systems, building low-latency GPU-accelerated inference pipelines and scalable microservice architectures. Experienced in deploying end-to-end AI solutions from model training and ONNX/TensorRT optimization to production-grade FastAPI services and RAG-based AI systems using LangChain and vector databases. Experienced with MLOps practices including Docker, Kubernetes, and CI/CD pipelines, with a focus on reliable backend engineering and cloud deployment.",
         email: "pradeepmurugesan.dev@gmail.com",
         phone: "+91 9629810007",

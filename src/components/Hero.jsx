@@ -9,7 +9,7 @@ import { portfolioData } from '../data/portfolio_data';
 import { useCursorSpot } from '../hooks/useCursorSpot';
 
 const Hero = () => {
-  const { name, title, summary, github, linkedin } = portfolioData.personalInfo;
+  const { name, title, tagline, github, linkedin } = portfolioData.personalInfo;
   const { cursorX, cursorY } = useCursorSpot();
   const heroRef = useRef(null);
 
@@ -70,7 +70,7 @@ const Hero = () => {
             </h2>
 
             <p className="text-base md:text-lg text-gray-400 max-w-2xl mb-10 leading-relaxed font-['DM_Sans'] gsap-reveal">
-              {summary}
+              {tagline}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto gsap-reveal">
