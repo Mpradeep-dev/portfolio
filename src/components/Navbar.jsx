@@ -93,7 +93,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="flex flex-col items-center text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="flex flex-col items-center text-sm font-medium text-gray-300 hover:text-white hover:[text-shadow:0_0_12px_rgba(255,255,255,0.9)] transition-all duration-300"
               >
                 {link.name}
                 {activeSection === link.id && (
