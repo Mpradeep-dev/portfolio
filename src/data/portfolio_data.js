@@ -170,19 +170,15 @@ export const portfolioData = {
     hobbies: [
         {
             name: "Cryptocurrency Trading & Market Analysis",
-            description: "Actively trade and analyze cryptocurrency markets, combining technical analysis, on-chain data, and market sentiment to time entries and manage risk. Backed by foundational blockchain knowledge (LinkedIn Blockchain Basics).",
+            description: "Actively trade and analyze crypto markets — combining technical analysis, on-chain data, and market sentiment to time entries and manage risk.",
             icon: "Bitcoin",
             subTitle: "Skills & focus areas:",
             activities: [
-                "Technical analysis — price action, market structure, support/resistance, trend lines",
-                "Indicators — RSI, MACD, moving averages, volume profile, Fibonacci retracements",
-                "Candlestick patterns and multi-timeframe confluence",
-                "Risk management — position sizing, stop-loss/take-profit, risk-reward ratios",
-                "Portfolio allocation and capital preservation across market cycles",
-                "On-chain analysis and reading order-book / liquidity dynamics",
-                "Trading psychology and disciplined, rule-based execution",
-                "Blockchain fundamentals — consensus, wallets, DeFi and tokenomics",
-                "Macro trends and narratives driving digital-asset markets"
+                "Technical analysis — price action, market structure, support/resistance",
+                "Indicators — RSI, MACD, moving averages, Fibonacci, volume profile",
+                "Risk management — position sizing, stop-loss/take-profit, risk-reward",
+                "Portfolio allocation, on-chain analysis and liquidity dynamics",
+                "Blockchain fundamentals, trading psychology and macro narratives"
             ]
         },
         {
