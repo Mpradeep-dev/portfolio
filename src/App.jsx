@@ -17,6 +17,7 @@ import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import ParallaxBackground from './components/ParallaxBackground';
+import ChatBot from './components/ChatBot';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +57,8 @@ function App() {
           <p>© {new Date().getFullYear()} Pradeep Murugesan. All rights reserved.</p>
           <p className="text-sm mt-2 font-['DM_Sans']">Designed with <span className="text-[var(--color-pure-white)]">Glassmorphism</span> & Monochrome</p>
         </footer>
+
+        <ChatBot />
       </div>
     </ReactLenis>
   );
