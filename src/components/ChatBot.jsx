@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimationControls, useReducedMotion } from 'framer-motion';
 import { Bot, X, Send } from 'lucide-react';
 import { portfolioData } from '../data/portfolio_data';
@@ -6,7 +6,7 @@ import { cn } from '../utils/cn';
 
 const GREETING = {
   role: 'assistant',
-  content: `Hi! I'm ${portfolioData.personalInfo.name.split(' ')[0]} — well, an AI version of me. Ask me about my skills, experience, projects, or anything about my work.`,
+  content: `Hey! 👋 I'm ${portfolioData.personalInfo.name.split(' ')[0]}. Ask me about my skills, experience, projects — anything about my work.`,
 };
 
 const ChatBot = () => {
@@ -15,40 +15,31 @@ const ChatBot = () => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [showBubble, setShowBubble] = useState(false);
 
   const scrollRef = useRef(null);
   const inputRef = useRef(null);
 
-  const botControls = useAnimationControls();
+  const handControls = useAnimationControls();
   const reduceMotion = useReducedMotion();
 
-  // Periodic attention: wiggle the bot + pop a waving greeting bubble while closed.
+  const wave = useCallback(() =>
+    handControls.start({
+      rotate: [0, 22, -8, 18, -6, 14, 0],
+      transition: { duration: 1.1, ease: 'easeInOut' },
+    }), [handControls]);
+
+  // Periodically wave the bot's hand while the chat is closed.
   useEffect(() => {
     if (open || reduceMotion) return;
     let alive = true;
-    const wiggle = () =>
-      botControls.start({
-        rotate: [0, -16, 13, -10, 8, 0],
-        transition: { duration: 1.1, ease: 'easeInOut' },
-      });
-    const nudge = () => {
-      if (!alive) return;
-      wiggle();
-      setShowBubble(true);
-      setTimeout(() => alive && setShowBubble(false), 3500);
-    };
-    const first = setTimeout(nudge, 2500);
-    const id = setInterval(nudge, 12000);
+    const tick = () => { if (alive) wave(); };
+    const first = setTimeout(tick, 1500);
+    const id = setInterval(tick, 6000);
     return () => { alive = false; clearTimeout(first); clearInterval(id); };
-  }, [open, reduceMotion, botControls]);
+  }, [open, reduceMotion, wave]);
 
   const waveOnHover = () => {
-    if (reduceMotion) return;
-    botControls.start({
-      rotate: [0, -16, 13, -10, 8, 0],
-      transition: { duration: 0.9, ease: 'easeInOut' },
-    });
+    if (!reduceMotion) wave();
   };
 
   useEffect(() => {
@@ -105,32 +96,6 @@ const ChatBot = () => {
 
   return (
     <>
-      {/* Greeting bubble — periodic attention nudge while closed */}
-      <AnimatePresence>
-        {showBubble && !open && (
-          <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.9 }}
-            transition={{ duration: 0.25 }}
-            onClick={() => setOpen(true)}
-            className="fixed bottom-[4.75rem] right-5 z-50 cursor-pointer select-none rounded-2xl rounded-br-sm bg-black/85 backdrop-blur-xl border border-white/15 px-3.5 py-2 text-sm text-white shadow-2xl font-['DM_Sans'] print:hidden"
-          >
-            <span className="inline-flex items-center gap-1.5">
-              <motion.span
-                aria-hidden="true"
-                animate={{ rotate: [0, 20, -8, 20, -8, 0] }}
-                transition={{ duration: 1, ease: 'easeInOut', repeat: Infinity, repeatDelay: 0.6 }}
-                style={{ transformOrigin: '70% 80%' }}
-              >
-                👋
-              </motion.span>
-              Hi! Ask me anything
-            </span>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Floating toggle */}
       <button
         onClick={() => setOpen((v) => !v)}
@@ -152,12 +117,22 @@ const ChatBot = () => {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <motion.span className="block" animate={botControls} style={{ transformOrigin: '50% 70%' }}>
-                <Bot size={26} />
-              </motion.span>
+              <Bot size={26} />
             </motion.span>
           )}
         </AnimatePresence>
+
+        {/* Waving hand — the bot greets the visitor */}
+        {!open && (
+          <motion.span
+            aria-hidden="true"
+            animate={handControls}
+            style={{ transformOrigin: '75% 85%' }}
+            className="absolute -top-1.5 -right-1.5 text-base leading-none drop-shadow"
+          >
+            👋
+          </motion.span>
+        )}
       </button>
 
       {/* Chat panel */}
@@ -183,8 +158,11 @@ const ChatBot = () => {
                 className="w-9 h-9 rounded-full object-cover border border-white/15"
               />
               <div className="min-w-0">
-                <p className="text-white font-bold font-['Syne'] leading-tight">Ask Pradeep</p>
-                <p className="text-xs text-gray-400 font-['DM_Sans']">AI assistant · answers as me</p>
+                <p className="text-white font-bold font-['Syne'] leading-tight">Pradeep</p>
+                <p className="text-xs text-gray-400 font-['DM_Sans'] flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
+                  Online
+                </p>
               </div>
             </div>
 
