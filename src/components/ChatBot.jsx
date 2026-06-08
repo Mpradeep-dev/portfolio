@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimationControls, useReducedMotion } from 'framer-motion';
-import { Bot, X, Send } from 'lucide-react';
+import { Bot, X, Send, Hand } from 'lucide-react';
 import { portfolioData } from '../data/portfolio_data';
 import { cn } from '../utils/cn';
 
@@ -127,10 +127,10 @@ const ChatBot = () => {
           <motion.span
             aria-hidden="true"
             animate={handControls}
-            style={{ transformOrigin: '75% 85%' }}
-            className="absolute -top-1.5 -right-1.5 text-base leading-none drop-shadow"
+            style={{ transformOrigin: '70% 90%' }}
+            className="absolute -top-1.5 -right-1.5 flex items-center justify-center w-5 h-5 rounded-full glass border border-white/25 text-white"
           >
-            👋
+            <Hand size={12} />
           </motion.span>
         )}
       </button>
