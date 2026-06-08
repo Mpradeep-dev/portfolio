@@ -88,7 +88,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -104,8 +104,13 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300 hover:text-white p-2">
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+              className="flex items-center justify-center w-11 h-11 text-gray-300 hover:text-white"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -120,7 +125,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="md:hidden absolute top-full left-4 right-4 mt-2 pointer-events-auto will-change-transform"
+            className="lg:hidden absolute top-full left-4 right-4 mt-2 pointer-events-auto will-change-transform"
           >
             <div className="glass rounded-2xl p-6 flex flex-col space-y-4 bg-black/90 backdrop-blur-2xl border border-white/20 shadow-2xl">
               {navLinks.map((link) => (
@@ -129,7 +134,7 @@ const Navbar = () => {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    'text-center py-2 font-medium transition-colors',
+                    'text-center py-3 font-medium transition-colors rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60',
                     activeSection === link.id ? 'text-white' : 'text-gray-400 hover:text-white'
                   )}
                 >
