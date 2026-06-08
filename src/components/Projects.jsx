@@ -41,7 +41,7 @@ const Projects = () => {
       .then(r => r.json())
       .then(data => {
         const enhanced = data
-          .filter(r => !r.fork)
+          .filter(r => !r.fork && !r.archived)
           .map(r => ({ ...r, category: categorize(r) }))
           .sort((a, b) => b.stargazers_count - a.stargazers_count);
         setRepos(enhanced);
