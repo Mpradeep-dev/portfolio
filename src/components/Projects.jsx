@@ -1,12 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Star, ExternalLink, Code2 } from 'lucide-react';
+import { Github, Star, ExternalLink, Code2, Layers, ArrowRight } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GlassCard from './GlassCard';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const FEATURED_PROJECT = {
+  name: 'Auto Label Flow',
+  description:
+    'A human-in-the-loop computer vision platform for annotation and continuous retraining: load a YOLO detector, auto-annotate new footage, correct it by hand, version the dataset, then train and register the next model as the new annotator.',
+  problem:
+    'Manually re-labeling every frame after a model drifts is slow and repetitive. Auto Label Flow closes that loop, so corrections feed straight back into the next training run instead of sitting in a spreadsheet.',
+  technologies: ['FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'Ultralytics YOLO', 'React', 'TypeScript', 'MinIO'],
+  link: 'https://github.com/Mpradeep-dev/Auto_Label_Flow',
+};
 
 const LANG_COLORS = {
   Python: '#e5e7eb',
@@ -85,23 +95,82 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Featured Projects</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow mb-8" />
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-['Syne'] text-gradient inline-block pb-2">Projects</h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] mx-auto rounded-full box-glow" />
+        </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {CATEGORIES.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 font-['DM_Sans'] ${filter === cat
-                  ? 'bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black'
-                  : 'glass text-gray-300 hover:text-white hover:border-[var(--color-pure-white)]'
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+        {/* Featured spotlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14"
+        >
+          <GlassCard className="p-8 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-10 items-start">
+              <div className="p-4 rounded-lg glass bg-[var(--color-pure-white)]/10 text-[var(--color-pure-white)] w-fit">
+                <Layers size={32} />
+              </div>
+
+              <div>
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-['Syne']">{FEATURED_PROJECT.name}</h3>
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full border border-gray-600/50 text-gray-300 bg-gray-800/30 font-['DM_Sans']">
+                    Featured
+                  </span>
+                </div>
+
+                <p className="text-gray-300 leading-relaxed mb-5 max-w-3xl font-['DM_Sans']">
+                  {FEATURED_PROJECT.description}
+                </p>
+
+                <p className="text-gray-400 leading-relaxed mb-6 max-w-3xl font-['DM_Sans']">
+                  <span className="text-gray-300 font-semibold">Problem it solves: </span>
+                  {FEATURED_PROJECT.problem}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-7">
+                  {FEATURED_PROJECT.technologies.map(tech => (
+                    <span
+                      key={tech}
+                      className="text-xs font-semibold px-3 py-1 rounded-full border border-gray-600/50 text-gray-300 bg-gray-800/30 font-['DM_Sans']"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={FEATURED_PROJECT.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 glass px-6 py-3 rounded-full font-medium text-white transition-all hover:border-white/40 hover:bg-white/10 hover:-translate-y-0.5 font-['DM_Sans']"
+                >
+                  <Github size={18} /> View on GitHub <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </GlassCard>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
+          {CATEGORIES.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 font-['DM_Sans'] ${filter === cat
+                ? 'bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black'
+                : 'glass text-gray-300 hover:text-white hover:border-[var(--color-pure-white)]'
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
         </motion.div>
 
         {loading ? (
@@ -111,7 +180,7 @@ const Projects = () => {
         ) : (
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence>
-              {filtered.map((repo, idx) => (
+              {filtered.map((repo) => (
                 <motion.div
                   key={repo.id}
                   layout

@@ -131,3 +131,32 @@
     transform: rotate(360deg);
   }
 }
+
+/* ProfileCard: recolor the default rainbow holo-foil to a restrained
+   white/lavender pearl sheen, and square the corners to match the
+   site's sharp-edged glass cards instead of the default 30px radius. */
+.profile-card-scope {
+  --card-radius: 10px;
+  --behind-glow-color: rgba(150, 120, 220, 0.32);
+  --behind-glow-size: 42%;
+  --sunpillar-1: hsl(262, 30%, 90%);
+  --sunpillar-2: hsl(250, 22%, 94%);
+  --sunpillar-3: hsl(0, 0%, 97%);
+  --sunpillar-4: hsl(272, 32%, 87%);
+  --sunpillar-5: hsl(0, 0%, 100%);
+  --sunpillar-6: hsl(280, 28%, 91%);
+}
+
+@media (max-width: 640px) {
+  #tech-stack .logoloop {
+    --logoloop-gap: 28px !important;
+  }
+}
+
+.profile-card-scope .pc-details p {
+  width: auto;
+  white-space: nowrap;
+  max-width: 92%;
+  margin-inline: auto;
+  line-height: 1.3;
+}

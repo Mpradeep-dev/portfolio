@@ -67,7 +67,7 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-4xl font-bold text-white mb-6 font-['Syne']">
-                Let&apos;s build something <span className="text-gradient">amazing</span> together.
+                Let&apos;s build something <span className="text-gradient">useful</span>.
               </h3>
               <p className="text-gray-400 text-lg leading-relaxed font-['DM_Sans']">
                 Whether you have a question, a project idea, or just want to say hi, my inbox is always open.

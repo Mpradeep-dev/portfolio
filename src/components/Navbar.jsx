@@ -6,6 +6,7 @@ import { cn } from '../utils/cn';
 
 const navLinks = [
   { name: 'Home', href: '#home', id: 'home' },
+  { name: 'Tech Stack', href: '#tech-stack', id: 'tech-stack' },
   { name: 'About', href: '#about', id: 'about' },
   { name: 'Skills', href: '#skills', id: 'skills' },
   { name: 'Experience', href: '#experience', id: 'experience' },
@@ -79,21 +80,21 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="flex items-center justify-between px-6 py-3 mx-auto max-w-5xl rounded-full glass pointer-events-auto"
+          className="flex items-center justify-between px-6 py-3 mx-auto max-w-7xl rounded-full glass pointer-events-auto"
           style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
         >
           {/* Logo */}
-          <a href="#home" className="text-xl font-bold tracking-tighter font-['Syne'] text-white">
+          <a href="#home" className="shrink-0 text-xl font-bold tracking-tighter font-['Syne'] text-white">
             Pradeep<span className="text-gray-400">.</span>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="flex flex-col items-center text-sm font-medium text-gray-300 hover:text-white hover:[text-shadow:0_0_12px_rgba(255,255,255,0.9)] transition-all duration-300"
+                className="flex flex-col items-center whitespace-nowrap text-[13px] xl:text-sm font-medium text-gray-300 hover:text-white hover:[text-shadow:0_0_12px_rgba(255,255,255,0.9)] transition-all duration-300"
               >
                 {link.name}
                 {activeSection === link.id && (

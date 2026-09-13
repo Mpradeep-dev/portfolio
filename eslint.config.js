@@ -32,4 +32,13 @@ export default defineConfig([
       globals: globals.node,
     },
   },
+  {
+    // Vendored WebGPU component (AeroShards): intentionally caches derived
+    // settings on a ref each render to avoid extra state, per its own
+    // upstream implementation. Not rewriting third-party component internals.
+    files: ['src/components/AeroShards.jsx'],
+    rules: {
+      'react-hooks/refs': 'off',
+    },
+  },
 ])

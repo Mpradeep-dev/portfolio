@@ -11,10 +11,10 @@ export default function About() {
 
                     <div className="text-gray-300 font-['DM_Sans'] text-lg leading-relaxed space-y-6 max-w-3xl mx-auto text-center md:text-left">
                         <p>
-                            Hi there! I'm a passionate developer who loves solving complex problems and turning ideas into reality. Over the past few years, I've spent my time diving deep into building scalable systems and exploring the fascinating worlds of backend architecture and artificial intelligence.
+                            I work at the intersection of computer vision and backend engineering, building real-time systems around YOLO and YOLO-Pose that run in production, not just in a notebook. That means GPU-accelerated inference with TensorRT and ONNX, asynchronous processing pipelines, and the FastAPI services that expose them to the rest of a product.
                         </p>
                         <p>
-                            For me, coding is more than just writing instructions for a machine; it's about crafting experiences and building tools that make a real difference. When I'm not deep in code, you'll probably find me exploring new tech trends, contributing to open source, or looking for the next challenging project to tackle. I believe in clean code, continuous learning, and having a bit of fun along the way.
+                            On the GenAI side, I build RAG pipelines with LangChain and vector databases like Qdrant and Pinecone, and ship the whole stack with Docker, Kubernetes, and CI/CD so it survives contact with real traffic. The parts I care about most are the ones people skip: batching, queuing, and the failure modes that only show up under load.
                         </p>
                     </div>
                 </GlassCard>
