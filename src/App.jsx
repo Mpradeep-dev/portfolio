@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TechStack from './components/TechStack';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -43,6 +44,7 @@ function App() {
         <Navbar />
         <main className="relative z-10 w-full">
           <Hero />
+          <TechStack />
           <About />
           <Skills />
           <Experience />
