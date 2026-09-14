@@ -11,7 +11,7 @@ export default function About() {
 
                     <div className="text-gray-300 font-['DM_Sans'] text-lg leading-relaxed space-y-6 max-w-3xl mx-auto text-center md:text-left">
                         <p>
-                            I work at the intersection of computer vision and backend engineering, building real-time systems around YOLO and YOLO-Pose that run in production, not just in a notebook. That means GPU-accelerated inference with TensorRT and ONNX, asynchronous processing pipelines, and the FastAPI services that expose them to the rest of a product.
+                            I work at the intersection of computer vision and backend engineering, building real-time detection and pose-estimation systems that run in production, not just in a notebook. That means GPU-accelerated inference with TensorRT and ONNX, asynchronous processing pipelines, and the FastAPI services that expose them to the rest of a product.
                         </p>
                         <p>
                             On the GenAI side, I build RAG pipelines with LangChain and vector databases like Qdrant and Pinecone, and ship the whole stack with Docker, Kubernetes, and CI/CD so it survives contact with real traffic. The parts I care about most are the ones people skip: batching, queuing, and the failure modes that only show up under load.
