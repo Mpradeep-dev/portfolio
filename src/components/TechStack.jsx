@@ -52,7 +52,6 @@ export default function TechStack() {
           gap={56}
           hoverSpeed={8}
           fadeOut
-          fadeOutColor="#050505"
           scaleOnHover
           ariaLabel="Technologies I work with"
         />

@@ -12,10 +12,10 @@ export default function ParallaxBackground() {
     useGSAP(() => {
         gsap.fromTo(bgRef.current,
             {
-                scale: 2.5, // Start heavily zoomed in
+                scale: 1.15, // Subtle zoom-in, kept close to native resolution to avoid upscaling artifacts
             },
             {
-                scale: 1, // Zoom out to normal scale
+                scale: 1, // Settle to normal scale
                 ease: 'none',
                 scrollTrigger: {
                     trigger: document.body,
@@ -36,6 +36,14 @@ export default function ParallaxBackground() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
+                }}
+            />
+            {/* Fine grain to mask JPEG gradient banding on the low-contrast background */}
+            <div
+                className="absolute inset-0 opacity-[0.05] mix-blend-overlay"
+                style={{
+                    backgroundImage:
+                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
                 }}
             />
             {/* Dark overlay to ensure text readability */}
