@@ -2,10 +2,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, Github, Linkedin, Download } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import GlassCard from './GlassCard';
 import { portfolioData } from '../data/portfolio_data';
 
-function FloatingInput({ id, label, type = 'text', isTextarea = false }) {
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+function FloatingInput({ id, label, type = 'text', isTextarea = false, value, onChange, required = true }) {
   const base = `
     w-full bg-black/20 border border-[var(--color-glass-border)] text-white rounded-lg px-4
     focus:outline-none focus:ring-2 focus:ring-[var(--color-pure-white)] focus:border-transparent
@@ -15,9 +20,9 @@ function FloatingInput({ id, label, type = 'text', isTextarea = false }) {
   return (
     <div className="relative">
       {isTextarea ? (
-        <textarea id={id} rows={4} placeholder={label} className={`${base} py-3 resize-none`} />
+        <textarea id={id} name={id} rows={4} placeholder={label} required={required} value={value} onChange={onChange} className={`${base} py-3 resize-none`} />
       ) : (
-        <input id={id} type={type} placeholder={label} className={`${base} py-3`} />
+        <input id={id} name={id} type={type} placeholder={label} required={required} value={value} onChange={onChange} className={`${base} py-3`} />
       )}
       <label
         htmlFor={id}
@@ -36,12 +41,37 @@ function FloatingInput({ id, label, type = 'text', isTextarea = false }) {
 
 const Contact = () => {
   const { github, linkedin, email } = portfolioData.personalInfo;
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
-  function handleSubmit(e) {
+  function handleChange(e) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('EmailJS is not configured. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID and VITE_EMAILJS_PUBLIC_KEY.');
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { from_name: form.name, from_email: form.email, message: form.message },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 3000);
+    } catch (err) {
+      console.error('EmailJS send failed:', err);
+      setStatus('error');
+    }
   }
 
   return (
@@ -97,15 +127,20 @@ const Contact = () => {
           >
             <GlassCard className="p-8">
               <form className="space-y-6" onSubmit={handleSubmit}>
-                <FloatingInput id="name" label="Name" />
-                <FloatingInput id="email" label="Email" type="email" />
-                <FloatingInput id="message" label="Message" isTextarea />
+                <FloatingInput id="name" label="Name" value={form.name} onChange={handleChange} />
+                <FloatingInput id="email" label="Email" type="email" value={form.email} onChange={handleChange} />
+                <FloatingInput id="message" label="Message" isTextarea value={form.message} onChange={handleChange} />
                 <button
                   type="submit"
-                  className="w-full relative group overflow-hidden bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all font-['DM_Sans']"
+                  disabled={status === 'sending'}
+                  className="w-full relative group overflow-hidden bg-gradient-to-r from-[var(--color-pure-white)] to-[var(--color-silver-gray)] text-black font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all font-['DM_Sans'] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {sent ? (
+                  {status === 'sent' ? (
                     <span className="text-black font-semibold">✓ Message sent!</span>
+                  ) : status === 'error' ? (
+                    <span className="text-black font-semibold">Failed to send — try again</span>
+                  ) : status === 'sending' ? (
+                    <span className="relative z-10 flex items-center gap-2">Sending...</span>
                   ) : (
                     <span className="relative z-10 flex items-center gap-2">
                       Send Message <Send size={18} />

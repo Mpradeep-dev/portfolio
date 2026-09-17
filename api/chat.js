@@ -3,7 +3,7 @@
 import { portfolioData } from '../src/data/portfolio_data.js';
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = 'llama-3.1-8b-instant';
+const MODEL = 'openai/gpt-oss-20b';
 const MAX_HISTORY = 10;
 const MAX_CONTENT = 1500;
 
